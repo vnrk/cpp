@@ -2,19 +2,22 @@
 
 using namespace std;
 
-struct A{
+class A{
+	public:
 	A(){ cout<< "A()"<<endl;}
+	//remove virtual and see for yourself
 	virtual ~A(){ cout << "~A()"<<endl;}
 };
 
-struct B:A{
+class B : public A{
+	public:
 	B(){cout<< "B()"<<endl;}
 	~B(){cout<< "~B()"<<endl;}
 };
 
 int main(){
-	A *aa= new B();
-	delete aa;
+	A *a= new B();
+	delete a;
 	return 0;
 }
 
